@@ -4,6 +4,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
   selector: 'app-product-list',
+  standalone: true,
   imports: [CommonModule, NzCardModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'

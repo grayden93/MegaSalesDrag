@@ -1,0 +1,4 @@
+/* Placeholder styles for ng-zorro components */
+.ant-menu { list-style: none; margin: 0; padding: 0; display: flex; }
+.ant-menu-item { padding: 0 16px; cursor: pointer; }
+.card { border: 1px solid #d9d9d9; padding: 16px; border-radius: 2px; }

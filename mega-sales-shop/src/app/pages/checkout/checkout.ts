@@ -4,6 +4,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
   selector: 'app-checkout',
+  standalone: true,
   imports: [CommonModule, NzCardModule],
   templateUrl: './checkout.html',
   styleUrl: './checkout.css'
