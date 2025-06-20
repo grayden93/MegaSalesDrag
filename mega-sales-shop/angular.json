@@ -11,12 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
+
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -24,9 +23,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -58,42 +55,38 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "mega-sales-shop:build:production"
-            },
-            "development": {
-              "buildTarget": "mega-sales-shop:build:development"
-            }
+          "builder": "@angular-devkit/build-angular:dev-server"
+        },
+        "configurations": {
+          "production": {
+            "buildTarget": "mega-sales-shop:build:production"
           },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
+          "development": {
+            "buildTarget": "mega-sales-shop:build:development"
           }
+        },
+        "defaultConfiguration": "development"
+      },
+      "extract-i18n": {
+        "builder": "@angular-devkit/build-angular:extract-i18n"
+      },
+      "test": {
+        "builder": "@angular-devkit/build-angular:karma",
+        "options": {
+          "polyfills": ["zone.js", "zone.js/testing"],
+          "tsConfig": "tsconfig.spec.json",
+          "assets": [
+            {
+              "glob": "**/*",
+              "input": "public"
+            }
+          ],
+          "styles": ["src/styles.css"]
         }
       }
     }
   },
+
   "cli": {
     "analytics": "b132413e-506c-447c-a32c-c40d13c87cbb"
   }
